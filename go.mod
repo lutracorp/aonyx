@@ -1,4 +1,4 @@
-module github.com/lutracorp/lutraauth
+module github.com/lutracorp/aonyx
 
 go 1.23.4
 

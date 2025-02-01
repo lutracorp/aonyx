@@ -5,20 +5,20 @@ import (
 	"os"
 
 	"github.com/hashicorp/hcl/v2/hclsimple"
-	"github.com/lutracorp/lutraauth/internal/app"
-	"github.com/lutracorp/lutraauth/internal/pkg/database"
-	"github.com/lutracorp/lutraauth/internal/pkg/server"
+	"github.com/lutracorp/aonyx/internal/app"
+	"github.com/lutracorp/aonyx/internal/pkg/database"
+	"github.com/lutracorp/aonyx/internal/pkg/server"
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
 	ca := &cli.App{
-		Name:  "lutraauth",
+		Name:  "aonyx",
 		Usage: "The Single Sign-On portal for LutraCorp services",
 		Commands: []*cli.Command{
 			{
 				Name:  "server",
-				Usage: "Starts a LutraAuth server",
+				Usage: "Starts a Aonyx server",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:  "config",

@@ -10,7 +10,7 @@ import (
 // App stores Fiber instance.
 var App = fiber.New(
 	fiber.Config{
-		AppName:     "LutraAuth",
+		AppName:     "Aonyx",
 		JSONEncoder: json.Marshal,
 		JSONDecoder: json.Unmarshal,
 	},
