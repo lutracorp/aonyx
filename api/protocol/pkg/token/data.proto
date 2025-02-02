@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pkg.token;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/lutracorp/aonyx/api/protocol/pkg/token";
+
+// The data contained in the token.
+message Data {
+  bytes payload = 1; // The payload contained in the token.
+  bytes signature = 2; // Signature of the rest of the data in the token.
+  google.protobuf.Timestamp timestamp = 3; // The time when the token was generated.
+}

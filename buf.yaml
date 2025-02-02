@@ -1,0 +1,13 @@
+---
+version: v2
+
+modules:
+  - path: api/protocol
+
+lint:
+  use:
+    - BASIC
+
+breaking:
+  use:
+    - FILE
