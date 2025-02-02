@@ -1,7 +1,7 @@
 package authentication
 
 import (
-	"github.com/lutracorp/aonyx/internal/app/util/validator"
+	"github.com/lutracorp/aonyx/internal/pkg/validator"
 	"github.com/matthewhartstonge/argon2"
 )
 
