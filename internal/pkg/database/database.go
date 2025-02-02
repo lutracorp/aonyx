@@ -43,3 +43,10 @@ func Close() error {
 
 	return sqlDB.Close()
 }
+
+// Migrate runs auto migration.
+func Migrate() error {
+	return DB.AutoMigrate(
+		&User{},
+	)
+}

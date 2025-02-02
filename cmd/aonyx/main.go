@@ -6,6 +6,7 @@ import (
 
 	"github.com/hashicorp/hcl/v2/hclsimple"
 	"github.com/lutracorp/aonyx/internal/app"
+	"github.com/lutracorp/aonyx/internal/app/controller/authentication"
 	"github.com/lutracorp/aonyx/internal/pkg/database"
 	"github.com/lutracorp/aonyx/internal/pkg/server"
 	"github.com/urfave/cli/v2"
@@ -36,9 +37,16 @@ func main() {
 						return err
 					}
 
-					if err := database.DB.AutoMigrate(&database.User{}); err != nil {
+					if err := database.Migrate(); err != nil {
 						return err
 					}
+
+					api := server.App.Group("/api")
+
+					ac := authentication.NewController()
+					ag := api.Group("/auth")
+					ag.Post("/login", ac.Login)
+					ag.Post("/register", ac.Register)
 
 					return server.Open(cfg.Server)
 				},
